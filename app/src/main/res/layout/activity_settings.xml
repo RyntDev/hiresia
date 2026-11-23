@@ -918,13 +918,77 @@
                 android:textSize="12sp"
                 android:fontFamily="sans-serif-bold"
                 android:letterSpacing="0.05"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="8dp" />
+
+            <!-- GitHub & Pembaruan -->
+            <LinearLayout
+                android:id="@+id/rowGithubReleases"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="?attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/tvGithubReleasesTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="GitHub &amp; Pembaruan"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvGithubReleasesDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rilis"
+                    android:textColor="@color/lime_primary"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-medium" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:layout_marginStart="8dp"
+                    app:tint="@color/text_secondary" />
+
+            </LinearLayout>
+
+            <!-- Lisensi Open-Source -->
+            <LinearLayout
+                android:id="@+id/rowOpenSourceLicenses"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="?attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/tvOpenSourceLicensesTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Lisensi Open-Source"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:layout_marginStart="8dp"
+                    app:tint="@color/text_secondary" />
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tvAppInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hiresia Audio Player v2.0\nMesin Audio Native C++ Hi-Res"
+                android:layout_marginTop="10dp"
+                android:text="Hiresia v1.0.0\nMesin Audio Native Hi-Res Bit-Perfect\nDikembangkan oleh RyntDev · Lisensi MIT"
                 android:textColor="@color/text_muted"
                 android:textSize="13sp"
                 android:lineSpacingExtra="4dp" />

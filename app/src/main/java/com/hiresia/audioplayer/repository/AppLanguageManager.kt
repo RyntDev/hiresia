@@ -190,7 +190,9 @@ object AppLanguageManager {
         "Kirim Masukan" to "Send Feedback",
         "Dukung Pengembang 😄" to "Support Developer 😄",
         "TENTANG APLIKASI" to "ABOUT APPLICATION",
-        "Hiresia Audio Player v2.0\nMesin Audio Native C++ Hi-Res" to "Hiresia Audio Player v2.0\nNative C++ Hi-Res Audio Engine",
+        "GitHub & Pembaruan" to "GitHub & Updates",
+        "Rilis" to "Releases",
+        "Lisensi Open-Source" to "Open-Source Licenses",
 
         // Volume Settings Screen (Sistem Volume Audiophile)
         "Sistem Volume Audiophile" to "Audiophile Volume System",

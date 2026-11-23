@@ -188,6 +188,53 @@ class MainActivity : AppCompatActivity() {
         checkPermissionsAndLoad()
         handleUsbIntent(intent)
         handleIncomingAudioIntent(intent)
+        binding.root.post { maybeShowFirstLaunchAboutPopup() }
+    }
+
+    private fun maybeShowFirstLaunchAboutPopup() {
+        if (isFinishing || isDestroyed) return
+        val versionName = try {
+            @Suppress("DEPRECATION")
+            packageManager.getPackageInfo(packageName, 0).versionName ?: "1.0.0"
+        } catch (_: Exception) {
+            "1.0.0"
+        }
+        if (AudioSettingsRepository.lastSeenWelcomeVersion == versionName) return
+        AudioSettingsRepository.lastSeenWelcomeVersion = versionName
+
+        val title = tr(
+            "Selamat Datang di Hiresia v$versionName",
+            "Welcome to Hiresia v$versionName"
+        )
+        val message = tr(
+            "Mesin Audio Native Hi-Res Bit-Perfect\n" +
+                "Dikembangkan oleh RyntDev · Lisensi MIT\n\n" +
+                "• Direct USB DAC (UAC1/UAC2), DSD & DoP 1.1\n" +
+                "• 64-Bit Parametric EQ, Crossfeed & ReplayGain\n" +
+                "• 100% gratis, offline, dan bebas iklan\n\n" +
+                "Suka dengan Hiresia? Anda bisa mendukung pengembangan aplikasi ini kapan saja!",
+            "Bit-Perfect Native Hi-Res Audio Engine\n" +
+                "Developed by RyntDev · MIT License\n\n" +
+                "• Direct USB DAC (UAC1/UAC2), DSD & DoP 1.1\n" +
+                "• 64-Bit Parametric EQ, Crossfeed & ReplayGain\n" +
+                "• 100% free, offline, and ad-free\n\n" +
+                "Enjoying Hiresia? You can support ongoing development anytime!"
+        )
+
+        MaterialAlertDialogBuilder(this)
+            .setTitle(title)
+            .setMessage(message)
+            .setPositiveButton(tr("Pindai Folder", "Scan Folder")) { _, _ ->
+                try {
+                    openAudioFolderLauncher.launch(null)
+                } catch (_: Exception) {}
+            }
+            .setNeutralButton(tr("Dukung Pengembang 😄", "Support Developer 😄")) { _, _ ->
+                try {
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://sociabuzz.com/rynodev/tribe")))
+                } catch (_: Exception) {}
+            }
+            .show()
     }
 
     override fun onResume() {

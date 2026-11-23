@@ -261,15 +261,62 @@ class SettingsActivity : AppCompatActivity() {
 
         // 7. Dukungan & Masukan (Report Bug / Improve Hiresia & Donate)
         binding.rowReportFeedback.setOnClickListener {
-            openExternalUrl("https://docs.google.com/forms/d/e/1FAIpQLSfe809fZb4Sg_37t5HjpQ0gW2WjYzNYuhyE4QPkKRHKc0DDBw/viewform?usp=publish-editor")
+            openExternalUrl("https://docs.google.com/forms/d/e/1FAIpQLSfe809fZb4Sg_37t5HjpQ0gW2WjYzNYuhyE4QPkKRHKc0DDBw/viewform")
         }
 
         binding.rowDonate.setOnClickListener {
             openExternalUrl("https://sociabuzz.com/rynodev/tribe")
         }
 
+        // 8. Tentang Aplikasi (GitHub Releases & Open-Source Licenses)
+        binding.rowGithubReleases.setOnClickListener {
+            openExternalUrl("https://github.com/RyntDev/hiresia/releases")
+        }
+
+        binding.rowOpenSourceLicenses.setOnClickListener {
+            showOpenSourceLicensesDialog()
+        }
+
         refreshDynamicLabels()
         AppLanguageManager.applyLanguageToViewTree(binding.root)
+    }
+
+    private fun getAppVersionName(): String {
+        return try {
+            @Suppress("DEPRECATION")
+            packageManager.getPackageInfo(packageName, 0).versionName ?: "1.0.0"
+        } catch (_: Exception) {
+            "1.0.0"
+        }
+    }
+
+    private fun showOpenSourceLicensesDialog() {
+        val summary = tr(
+            "Hiresia menggunakan library open-source berikut:\n\n" +
+                "• Apple ALAC Decoder — Apache License 2.0\n" +
+                "• WavPack 5.7.0 (David Bryant) — BSD 3-Clause\n" +
+                "• dr_libs (dr_flac, dr_mp3, dr_wav) — Public Domain / MIT-0\n" +
+                "• stb_vorbis (Sean Barrett) — MIT / Public Domain\n" +
+                "• AndroidX, Material & Jetpack Media3 — Apache License 2.0\n" +
+                "• Glide — BSD / MIT / Apache License 2.0\n" +
+                "• LRCLIB — Layanan Lirik Sinkron Terbuka",
+            "Hiresia incorporates the following open-source libraries:\n\n" +
+                "• Apple ALAC Decoder — Apache License 2.0\n" +
+                "• WavPack 5.7.0 (David Bryant) — BSD 3-Clause\n" +
+                "• dr_libs (dr_flac, dr_mp3, dr_wav) — Public Domain / MIT-0\n" +
+                "• stb_vorbis (Sean Barrett) — MIT / Public Domain\n" +
+                "• AndroidX, Material & Jetpack Media3 — Apache License 2.0\n" +
+                "• Glide — BSD / MIT / Apache License 2.0\n" +
+                "• LRCLIB — Open Synced Lyrics API"
+        )
+        MaterialAlertDialogBuilder(this)
+            .setTitle(tr("Lisensi Open-Source", "Open-Source Licenses"))
+            .setMessage(summary)
+            .setPositiveButton(tr("Tutup", "Close"), null)
+            .setNeutralButton(tr("Lihat Lengkap", "View Full")) { _, _ ->
+                openExternalUrl("https://github.com/RyntDev/hiresia/blob/main/THIRD_PARTY_LICENSES.md")
+            }
+            .show()
     }
 
     private fun openExternalUrl(url: String) {
@@ -313,6 +360,12 @@ class SettingsActivity : AppCompatActivity() {
 
         binding.tvLanguageDesc.text = if (AudioSettingsRepository.isEnglish) "English" else "Bahasa Indonesia"
         binding.tvLanguageDesc.setTextColor(scheme.accent)
+
+        val ver = getAppVersionName()
+        binding.tvAppInfo.text = tr(
+            "Hiresia v$ver\nMesin Audio Native Hi-Res Bit-Perfect\nDikembangkan oleh RyntDev · Lisensi MIT",
+            "Hiresia v$ver\nBit-Perfect Native Hi-Res Audio Engine\nDeveloped by RyntDev · MIT License"
+        )
 
         updateEqualizerSummaryText()
         if (!SleepTimerManager.isActive.value) {
@@ -437,6 +490,7 @@ class SettingsActivity : AppCompatActivity() {
         binding.tvAccentColorDesc.setTextColor(accent)
         binding.tvLanguageDesc.setTextColor(accent)
         binding.tvReportFeedbackDesc.setTextColor(accent)
+        binding.tvGithubReleasesDesc.setTextColor(accent)
 
         val uncheckedTrack = if (AudioSettingsRepository.themeMode == AudioSettingsRepository.THEME_MODE_DARK) {
             Color.parseColor("#3A3A3D")

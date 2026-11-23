@@ -80,6 +80,13 @@ object AudioSettingsRepository {
     private const val KEY_EQ_ACTIVE_PRESET = "key_eq_active_preset"
     private const val KEY_EQ_CUSTOM_PRESETS = "key_eq_custom_presets_json"
     private const val KEY_APP_LANGUAGE = "key_app_language" // "id" or "en"
+    private const val KEY_LAST_SEEN_WELCOME_VERSION = "key_last_seen_welcome_version_v2"
+
+    var lastSeenWelcomeVersion: String
+        get() = if (::prefs.isInitialized) prefs.getString(KEY_LAST_SEEN_WELCOME_VERSION, "") ?: "" else ""
+        set(value) {
+            if (::prefs.isInitialized) prefs.edit().putString(KEY_LAST_SEEN_WELCOME_VERSION, value).apply()
+        }
 
     const val DAC_DEFAULT_VOLUME = 0.20f // Default volume 20% saat DAC pertama kali dicolokkan (mencegah kaget/telinga sakit)
     const val DAC_MAX_SAFETY_VOLUME = 0.80f // Puncak volume DAC dibatasi maksimal 80% demi keamanan pendengaran

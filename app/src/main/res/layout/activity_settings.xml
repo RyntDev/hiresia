@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark">
+
+    <!-- Top Header Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="16dp"
+        android:layout_marginTop="8dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:src="@drawable/ic_chevron_right"
+            android:rotation="180"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/text_primary"
+            android:contentDescription="Kembali" />
+
+        <TextView
+            android:id="@+id/tvSettingsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pengaturan"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-bold"
+            android:layout_marginStart="4dp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divHeaderTop"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/border_line" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/layoutSettingsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="32dp">
+
+            <!-- ===================== SECTION: PUSTAKA ===================== -->
+            <TextView
+                android:id="@+id/tvSectionPustaka"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PUSTAKA MUSIK"
+                android:textColor="@color/lime_primary"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-bold"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Folder Musik -->
+            <LinearLayout
+                android:id="@+id/rowMusicFolders"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="?attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Folder Musik Terdaftar"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvFolderCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3 folder"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:layout_marginStart="8dp"
+                    app:tint="@color/text_secondary" />
+
+            </LinearLayout>
+
+            <!-- Pindai Ulang Pustaka -->
+            <LinearLayout
+                android:id="@+id/rowRescanLibrary"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="?attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Pindai Ulang Pustaka"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_chevron_right"
+                    app:tint="@color/text_secondary" />
+
+            </LinearLayout>
+
+            <!-- Sembunyikan Lagu Pendek -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="54dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingEnd="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sembunyikan Audio Berdurasi Pendek"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Abaikan rekaman singkat seperti nada dering atau suara notifikasi"
+                        android:textColor="@color/text_muted"
+                        android:textSize="11sp"
+                        android:layout_marginTop="2dp" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchHideShortTracks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    app:thumbTint="@color/switch_thumb_selector"
+                    app:trackTint="@color/switch_track_selector" />
+
+            </LinearLayout>
+
+            <!-- Garis Pemisah Antar-Bagian -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:tag="section_divider"
+                android:background="@color/border_line"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="18dp" />
+
+            <!-- ===================== SECTION: PEMUTARAN ===================== -->
+            <TextView
+                android:id="@+id/tvSectionPemutaran"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PEMUTARAN &amp; EFEK AUDIO"
+                android:textColor="@color/lime_primary"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-bold"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Putar Tanpa Jeda -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="54dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingEnd="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Putar Tanpa Jeda (Gapless)"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sambung pergantian antarlagu secara mulus tanpa jeda hening"
+                        android:textColor="@color/text_muted"
+                        android:textSize="11sp"
+                        android:layout_marginTop="2dp" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchGapless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    app:thumbTint="@color/switch_thumb_selector"
+                    app:trackTint="@color/switch_track_selector" />
+
+            </LinearLayout>
+
+            <!-- Ekualiser -->
+            <LinearLayout
+                android:id="@+id/rowEqualizer"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="?attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Ekualiser &amp; Pemrosesan DSP"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvEqualizer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:layout_marginStart="8dp"
+                    app:tint="@color/text_secondary" />
+
+            </LinearLayout>
+
+            <!-- Pengatur Waktu Tidur -->
+            <LinearLayout
+                android:id="@+id/rowSleepTimer"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="?attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Pengatur Waktu Tidur"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvSleepTimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mati"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:layout_marginStart="8dp"
+                    app:tint="@color/text_secondary" />
+
+            </LinearLayout>
+
+            <!-- Garis Pemisah Antar-Bagian -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:tag="section_divider"
+                android:background="@color/border_line"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="18dp" />
+
+            <!-- ===================== SECTION: DRIVER & KELUARAN AUDIO ===================== -->
+            <TextView
+                android:id="@+id/tvSectionAudio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DRIVER &amp; KELUARAN AUDIO HI-RES"
+                android:textColor="@color/lime_primary"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-bold"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="8dp" />
+
+            <!-- 1. Mode Bit-Perfect (Jalur Langsung) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="56dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingEnd="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mode Bit-Perfect (Jalur Murni)"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-medium" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kirim data audio 100% murni tanpa perubahan (lewati DSP, EQ, dan volume perangkat lunak)"
+                        android:textColor="@color/text_muted"
+                        android:textSize="11sp"
+                        android:layout_marginTop="2dp" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchBitPerfect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    app:thumbTint="@color/switch_thumb_selector"
+                    app:trackTint="@color/switch_track_selector" />
+
+            </LinearLayout>
+
+            <!-- 2. Driver Hi-Res Langsung (Lewati Sistem) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="56dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingEnd="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Driver Hi-Res Langsung (Lewati Sistem)"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-medium" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lewati pencampur AudioFlinger Android 48 kHz melalui jalur AAudio HAL eksklusif"
+                        android:textColor="@color/text_muted"
+                        android:textSize="11sp"
+                        android:layout_marginTop="2dp" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchHiResDriver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    app:thumbTint="@color/switch_thumb_selector"
+                    app:trackTint="@color/switch_track_selector" />
+
+            </LinearLayout>
+
+            <!-- 2b. Gunakan DoP / DSD Murni Bila Didukung -->
+            <LinearLayout
+                android:id="@+id/rowDsdHiResWhenPossible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="54dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingEnd="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gunakan DoP / DSD Murni Bila Didukung"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-medium" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gunakan keluaran DoP atau DSD murni jika audio internal mendukung. Jika dimatikan, DSD diubah ke PCM agar ekualiser dan DSP dapat digunakan."
+                        android:textColor="@color/text_muted"
+                        android:textSize="11sp"
+                        android:lineSpacingExtra="2dp"
+                        android:layout_marginTop="2dp" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchDsdHiResWhenPossible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    app:thumbTint="@color/switch_thumb_selector"
+                    app:trackTint="@color/switch_track_selector" />
+
+            </LinearLayout>
+
+            <!-- 3. Mode Eksklusif USB DAC -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="56dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingEnd="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mode Eksklusif USB DAC"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-medium" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kirim aliran audio langsung ke perangkat keras USB DAC dan bisukan suara notifikasi ponsel"
+                        android:textColor="@color/text_muted"
+                        android:textSize="11sp"
+                        android:layout_marginTop="2dp" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchUsbExclusive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    app:thumbTint="@color/switch_thumb_selector"
+                    app:trackTint="@color/switch_track_selector" />
+
+            </LinearLayout>
+
+            <!-- 3b. Mode Pemutaran DSD (USB DAC) -->
+            <LinearLayout
+                android:id="@+id/rowUsbDsdMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="54dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="8dp"
+                android:background="?attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mode Pemutaran DSD (USB DAC)"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-medium" />
+
+                    <TextView
+                        android:id="@+id/tvUsbDsdModeDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DoP (DSD di Atas PCM) [Standar DAC]"
+                        android:textColor="@color/lime_primary"
+                        android:textSize="12sp"
+                        android:layout_marginTop="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pilih metode pengiriman DSD sesuai dukungan perangkat keras USB DAC (Konversi ke PCM, DoP, atau DSD Murni)"
+                        android:textColor="@color/text_muted"
+                        android:textSize="11sp"
+                        android:layout_marginTop="2dp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:layout_marginStart="8dp"
+                    app:tint="@color/text_secondary" />
+
+            </LinearLayout>
+
+            <!-- 3c. Blokir USB HID -->
+            <LinearLayout
+                android:id="@+id/rowBlockUsbHid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="54dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingEnd="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Blokir USB HID"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-medium" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Putus jalur sinyal kontrol USB HID agar pemicu palsu tidak membuka asisten suara secara tiba-tiba"
+                        android:textColor="@color/text_muted"
+                        android:textSize="11sp"
+                        android:lineSpacingExtra="2dp"
+                        android:layout_marginTop="2dp" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchBlockUsbHid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    app:thumbTint="@color/switch_thumb_selector"
+                    app:trackTint="@color/switch_track_selector" />
+
+            </LinearLayout>
+
+            <!-- Active Pipeline Preview Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_search_pill"
+                android:padding="12dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:id="@+id/tvSectionPipeline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="JALUR PEMROSESAN AUDIO AKTIF"
+                    android:textColor="@color/lime_primary"
+                    android:textSize="10sp"
+                    android:fontFamily="sans-serif-bold"
+                    android:letterSpacing="0.05" />
+
+                <TextView
+                    android:id="@+id/tvPipelineChainPreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Source → Bit-Perfect → Hi-Res Direct Driver → Internal Audio"
+                    android:textColor="@color/text_primary"
+                    android:textSize="12sp"
+                    android:fontFamily="monospace"
+                    android:layout_marginTop="4dp" />
+
+            </LinearLayout>
+
+            <!-- Garis Pemisah Antar-Bagian -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:tag="section_divider"
+                android:background="@color/border_line"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="6dp" />
+
+            <!-- ===================== SECTION: SISTEM VOLUME AUDIOPHILE (LANGSUNG PANAH KANAN) ===================== -->
+            <LinearLayout
+                android:id="@+id/rowVolumeCategoryMenu"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:id="@+id/tvSectionVolume"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SISTEM VOLUME AUDIOPHILE"
+                    android:textColor="@color/lime_primary"
+                    android:textSize="13sp"
+                    android:fontFamily="sans-serif-bold"
+                    android:letterSpacing="0.05" />
+
+                <ImageView
+                    android:id="@+id/ivVolumeCategoryChevron"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:layout_marginStart="8dp"
+                    app:tint="@color/lime_primary" />
+
+            </LinearLayout>
+
+            <!-- Garis Pemisah Antar-Bagian -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:tag="section_divider"
+                android:background="@color/border_line"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="18dp" />
+
+            <!-- ===================== SECTION: TAMPILAN ===================== -->
+            <TextView
+                android:id="@+id/tvSectionTampilan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TAMPILAN ANTARMUKA"
+                android:textColor="@color/lime_primary"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-bold"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Tema (Disatukan ke Palet Warna) -->
+            <LinearLayout
+                android:id="@+id/rowTheme"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:visibility="gone"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="?attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Tema"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvThemeDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gelap"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:layout_marginStart="8dp"
+                    app:tint="@color/text_secondary" />
+
+            </LinearLayout>
+
+            <!-- Palet Warna -->
+            <LinearLayout
+                android:id="@+id/rowAccentColor"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="?attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Palet Warna"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvAccentColorDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Zest Terang"
+                    android:textColor="@color/lime_primary"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-medium" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:layout_marginStart="8dp"
+                    app:tint="@color/text_secondary" />
+
+            </LinearLayout>
+
+            <!-- Bahasa Aplikasi / App Language -->
+            <LinearLayout
+                android:id="@+id/rowLanguage"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="?attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/tvLanguageTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Bahasa Aplikasi"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvLanguageDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bahasa Indonesia"
+                    android:textColor="@color/lime_primary"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-medium" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:layout_marginStart="8dp"
+                    app:tint="@color/text_secondary" />
+
+            </LinearLayout>
+
+            <!-- Garis Pemisah Antar-Bagian -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:tag="section_divider"
+                android:background="@color/border_line"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="18dp" />
+
+            <!-- ===================== SECTION: DUKUNGAN & MASUKAN ===================== -->
+            <TextView
+                android:id="@+id/tvSectionDukungan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DUKUNGAN &amp; MASUKAN"
+                android:textColor="@color/lime_primary"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-bold"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Laporkan Bug & Saran -->
+            <LinearLayout
+                android:id="@+id/rowReportFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="?attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/tvReportFeedbackTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Laporkan Bug &amp; Saran"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvReportFeedbackDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kirim Masukan"
+                    android:textColor="@color/lime_primary"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-medium" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:layout_marginStart="8dp"
+                    app:tint="@color/text_secondary" />
+
+            </LinearLayout>
+
+            <!-- Dukung Pengembang (Donasi) -->
+            <LinearLayout
+                android:id="@+id/rowDonate"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="?attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/tvDonateTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Dukung Pengembang 😄"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_chevron_right"
+                    android:layout_marginStart="8dp"
+                    app:tint="@color/text_secondary" />
+
+            </LinearLayout>
+
+            <!-- Garis Pemisah Antar-Bagian -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:tag="section_divider"
+                android:background="@color/border_line"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="18dp" />
+
+            <!-- ===================== SECTION: TENTANG ===================== -->
+            <TextView
+                android:id="@+id/tvSectionTentang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TENTANG APLIKASI"
+                android:textColor="@color/lime_primary"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-bold"
+                android:letterSpacing="0.05"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/tvAppInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hiresia Audio Player v2.0\nMesin Audio Native C++ Hi-Res"
+                android:textColor="@color/text_muted"
+                android:textSize="13sp"
+                android:lineSpacingExtra="4dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

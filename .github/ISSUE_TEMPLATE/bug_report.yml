@@ -1,0 +1,66 @@
+name: Bug Report
+description: Report a bug, crash, UI glitch, or audio/USB DAC playback issue in Hiresia.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! For private reports or attaching large audio files/logs (up to 10 MB), you can also use our [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfe809fZb4Sg_37t5HjpQ0gW2WjYzNYuhyE4QPkKRHKc0DDBw/viewform).
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: A clear and concise description of the bug.
+      placeholder: Audio drops / crackles / app freezes when...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we trigger the issue?
+      placeholder: |
+        1. Connect USB DAC...
+        2. Enable Bit-Perfect mode...
+        3. Play FLAC 24-bit/192kHz track...
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Phone Model & Android Version
+      description: e.g., Pixel 8 (Android 15), Poco F5 (Android 14)
+      placeholder: "Device / Android version"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: output_path
+    attributes:
+      label: Audio Output Path
+      options:
+        - USB DAC (UAC1 / UAC2 Direct)
+        - Internal Speaker / 3.5mm Wired (AAudio Exclusive)
+        - Bluetooth
+        - Other / Not Applicable
+    validations:
+      required: true
+
+  - type: input
+    id: dac_and_format
+    attributes:
+      label: USB DAC Model & Audio Format (Optional)
+      description: Include your DAC model, file format, sample rate/bit depth, and DSP/DSD mode if relevant.
+      placeholder: "e.g., Fiio KA13 | FLAC 24-bit/192kHz or DSD128 DoP"
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: App Version, Screenshots, or Logs (Optional)
+      description: App version (e.g., v1.0.0), Signal Path screenshot, or ADB logcat snippet.
+      render: text
+

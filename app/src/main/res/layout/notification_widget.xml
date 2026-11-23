@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/surface_card"
+    android:padding="8dp"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/widgetAlbumArt"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@android:drawable/ic_media_play"
+        android:background="@color/surface_dark"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="8dp">
+
+        <TextView
+            android:id="@+id/widgetTrackTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="Hiresia Audio" />
+
+        <TextView
+            android:id="@+id/widgetTrackArtist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="Bit-Perfect Playback" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/widgetBtnPrev"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@android:drawable/ic_media_previous"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:tint="@color/text_primary"
+        android:contentDescription="Previous" />
+
+    <ImageButton
+        android:id="@+id/widgetBtnPlay"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_media_play"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:tint="@color/gold_accent"
+        android:contentDescription="Play/Pause" />
+
+    <ImageButton
+        android:id="@+id/widgetBtnNext"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@android:drawable/ic_media_next"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:tint="@color/text_primary"
+        android:contentDescription="Next" />
+
+</LinearLayout>

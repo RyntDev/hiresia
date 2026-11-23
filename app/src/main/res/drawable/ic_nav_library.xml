@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- First vertical book bar -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M4,4h2v16H4z" />
+    <!-- Second vertical book bar -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M9,4h2v16H9z" />
+    <!-- Third slanted book bar -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M15.5,4.5l-1.8,0.9 6.8,14.6 1.8,-0.9z" />
+</vector>

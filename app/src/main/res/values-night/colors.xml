@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Obsidian Gold Dark Canvas & Surface Colors -->
+    <color name="bg_dark">#161617</color>
+    <color name="page_bg">#161617</color>
+    <color name="surface_dark">#1E1E20</color>
+    <color name="surface_card">#1E1E20</color>
+    <color name="surface2">#2A2A2C</color>
+    <color name="surface_card_border">#2E2E30</color>
+    <color name="border_line">#2E2E30</color>
+    <color name="dark_pill">#2A2A2C</color>
+    <color name="dark_pill_selected">#F3EAC3</color>
+
+    <!-- Obsidian Champagne Gold Accent Signature Color -->
+    <color name="lime_primary">#F3EAC3</color>
+    <color name="lime_accent">#F3EAC3</color>
+    <color name="lime_pressed">#DFD4A7</color>
+    <color name="lime_glow">#40F3EAC3</color>
+
+    <!-- Status & Compatibility Colors -->
+    <color name="gold_accent">#F3EAC3</color>
+    <color name="cyan_accent">#2ED89A</color>
+    <color name="green_bitperfect">#2ED89A</color>
+    <color name="red_clip">#FF5252</color>
+    <color name="red_accent">#FF4D6D</color>
+
+    <!-- Text Typography for Obsidian Gold Dark -->
+    <color name="text_primary">#F5F5F7</color>
+    <color name="text_secondary">#9E9EA3</color>
+    <color name="text_muted">#9E9EA3</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#14130F</color>
+    <color name="on_accent">#14130F</color>
+
+    <!-- Artwork Cover Colors -->
+    <color name="cover_green">#2A2A2C</color>
+    <color name="cover_ink">#F3EAC3</color>
+
+    <!-- Fallback Quick Access Gradients -->
+    <color name="grad_disukai_start">#1E1E20</color>
+    <color name="grad_disukai_end">#1E1E20</color>
+    <color name="grad_terakhir_start">#1E1E20</color>
+    <color name="grad_terakhir_end">#1E1E20</color>
+    <color name="grad_album_start">#1E1E20</color>
+    <color name="grad_album_end">#1E1E20</color>
+    <color name="grad_artis_start">#1E1E20</color>
+    <color name="grad_artis_end">#1E1E20</color>
+    <color name="grad_baru_start">#1E1E20</color>
+    <color name="grad_baru_end">#1E1E20</color>
+    <color name="grad_fokus_start">#1E1E20</color>
+    <color name="grad_fokus_end">#1E1E20</color>
+    <color name="grad_santai_start">#1E1E20</color>
+    <color name="grad_santai_end">#1E1E20</color>
+
+    <color name="thumb_green_start">#2A2A2C</color>
+    <color name="thumb_green_end">#2A2A2C</color>
+    <color name="thumb_coral_start">#2A2A2C</color>
+    <color name="thumb_coral_end">#2A2A2C</color>
+    <color name="thumb_blue_start">#2A2A2C</color>
+    <color name="thumb_blue_end">#2A2A2C</color>
+    <color name="thumb_amber_start">#2A2A2C</color>
+    <color name="thumb_amber_end">#2A2A2C</color>
+    <color name="thumb_purple_start">#2A2A2C</color>
+    <color name="thumb_purple_end">#2A2A2C</color>
+    <color name="thumb_cyan_start">#2A2A2C</color>
+    <color name="thumb_cyan_end">#2A2A2C</color>
+    <color name="thumb_pink_start">#2A2A2C</color>
+    <color name="thumb_pink_end">#2A2A2C</color>
+</resources>
+

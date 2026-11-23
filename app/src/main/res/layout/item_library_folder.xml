@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="12dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/bg_chip_normal">
+
+    <ImageView
+        android:id="@+id/ivFolderIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_menu_agenda"
+        android:background="@color/surface_card"
+        android:padding="8dp"
+        app:tint="@color/gold_accent"
+        android:contentDescription="Folder Icon" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvFolderTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="Music" />
+
+            <TextView
+                android:id="@+id/tvTrackBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/surface_dark"
+                android:textColor="@color/gold_accent"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text="0 lagu" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvFolderPath"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp"
+            android:layout_marginTop="3dp"
+            android:maxLines="1"
+            android:ellipsize="middle"
+            android:text="/storage/emulated/0/Music" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnRescanFolder"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_rotate"
+        app:tint="@color/cyan_accent"
+        android:padding="6dp"
+        android:contentDescription="Pindai Ulang Folder" />
+
+    <ImageButton
+        android:id="@+id/btnDeleteFolder"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_delete"
+        app:tint="@color/red_accent"
+        android:padding="6dp"
+        android:contentDescription="Hapus Folder dari Pustaka" />
+
+</LinearLayout>

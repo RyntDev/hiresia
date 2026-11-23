@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_card_dark_item"
+    android:layout_marginBottom="14dp"
+    android:padding="8dp">
+
+    <!-- Group Header Row -->
+    <LinearLayout
+        android:id="@+id/layoutGroupHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="4dp">
+
+        <!-- Drag Handle (36dp touch target around 20dp icon) -->
+        <ImageView
+            android:id="@+id/ivGroupDragHandle"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_drag_handle"
+            app:tint="@color/text_secondary"
+            android:layout_marginEnd="4dp"
+            android:contentDescription="Geser urutan grup" />
+
+        <!-- Group Thumbnail -->
+        <ImageView
+            android:id="@+id/ivGroupThumb"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="centerCrop" />
+
+        <!-- Title & Subtitle -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp">
+
+            <TextView
+                android:id="@+id/tvGroupTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Playlist A"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-bold"
+                android:singleLine="true"
+                android:ellipsize="end" />
+
+            <TextView
+                android:id="@+id/tvGroupSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Playlist  4 lagu"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <!-- Chevron Expand/Collapse -->
+        <ImageView
+            android:id="@+id/ivGroupChevron"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_chevron_down"
+            app:tint="@color/text_secondary"
+            android:layout_marginEnd="8dp" />
+
+        <!-- 3-Dots Menu -->
+        <ImageButton
+            android:id="@+id/btnGroupMenu"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_more_vert"
+            app:tint="@color/text_secondary"
+            android:contentDescription="Opsi grup" />
+
+    </LinearLayout>
+
+    <!-- Expandable Child Section -->
+    <LinearLayout
+        android:id="@+id/layoutGroupContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="6dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvGroupTracks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false" />
+
+        <!-- Add Song to Group Button (visible on custom tracks) -->
+        <TextView
+            android:id="@+id/btnAddSongToGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+ Tambah lagu"
+            android:textColor="@color/lime_primary"
+            android:textSize="13sp"
+            android:fontFamily="sans-serif-bold"
+            android:paddingStart="12dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="6dp"
+            android:background="?attr/selectableItemBackground"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</LinearLayout>

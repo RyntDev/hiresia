@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Hiresia" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/lime_primary</item>
+        <item name="colorPrimaryVariant">@color/lime_primary</item>
+        <item name="colorOnPrimary">@color/on_accent</item>
+        <item name="colorSecondary">@color/lime_primary</item>
+        <item name="colorSecondaryVariant">@color/lime_primary</item>
+        <item name="colorOnSecondary">@color/on_accent</item>
+        <item name="android:colorBackground">@color/bg_dark</item>
+        <item name="colorSurface">@color/surface_card</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="colorControlActivated">@color/lime_primary</item>
+        <item name="colorSwitchThumbNormal">#4A4E40</item>
+    </style>
+</resources>

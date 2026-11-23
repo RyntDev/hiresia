@@ -1,0 +1,9 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Private Bug Report / Upload Sample Files (Google Form)
+    url: https://docs.google.com/forms/d/e/1FAIpQLSfe809fZb4Sg_37t5HjpQ0gW2WjYzNYuhyE4QPkKRHKc0DDBw/viewform
+    about: No GitHub account required — report bugs privately or attach audio samples, screenshots, and logs (up to 5 files, 10 MB each).
+  - name: Support Hiresia Developer (SociaBuzz)
+    url: https://sociabuzz.com/rynodev/tribe
+    about: Support ongoing development of Hiresia.
+

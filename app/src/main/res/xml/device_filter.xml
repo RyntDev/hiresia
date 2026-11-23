@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- USB Audio Class 1 and 2 Standard Devices (C++ Engine Filter) -->
+    <usb-device class="1" />
+    <usb-device class="1" subclass="1" />
+    <usb-device class="1" subclass="2" />
+    <usb-device class="1" subclass="3" />
+
+    <!-- Specific USB Audio DAC Vendor IDs -->
+    <!-- Realtek Semiconductor (ALC5686, ALC4042, ALC4050, etc.) -->
+    <usb-device vendor-id="3034" />
+    <!-- Conexant / Synaptics CX31993 -->
+    <usb-device vendor-id="6805" />
+    <!-- Tempotec / Sonata / Cirrus Logic CS43131 -->
+    <usb-device vendor-id="12230" />
+    <!-- FiiO Electronics -->
+    <usb-device vendor-id="10610" />
+    <!-- iFi Audio -->
+    <usb-device vendor-id="9431" />
+    <!-- ESS Technology Sabre -->
+    <usb-device vendor-id="1348" />
+    <!-- Questyle / Savitech / Hiby -->
+    <usb-device vendor-id="9318" />
+    <usb-device vendor-id="1204" />
+</resources>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/bg_dark"
+    android:padding="20dp"
+    android:maxHeight="540dp">
+
+    <!-- Header Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <FrameLayout
+            android:id="@+id/boxQuickIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_box_pink">
+
+            <ImageView
+                android:id="@+id/ivQuickIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_card_heart" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="14dp">
+
+            <TextView
+                android:id="@+id/tvQuickTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Disukai"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-bold" />
+
+            <TextView
+                android:id="@+id/tvQuickSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 lagu"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnCloseQuick"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            app:tint="@color/text_secondary"
+            android:padding="8dp"
+            android:contentDescription="Tutup" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/surface_card"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="14dp" />
+
+    <!-- Action Row (Play All) -->
+    <LinearLayout
+        android:id="@+id/layoutQuickActions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnQuickPlayAll"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:background="@drawable/bg_pill_lime"
+            android:text="▶  Putar Semua"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:fontFamily="sans-serif-bold"
+            android:textAllCaps="false"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp" />
+
+    </LinearLayout>
+
+    <!-- Empty State -->
+    <LinearLayout
+        android:id="@+id/layoutQuickEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tvQuickEmptyTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Belum ada lagu yang disukai"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-bold" />
+
+        <TextView
+            android:id="@+id/tvQuickEmptyMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tahan lagu di pustaka untuk menyukainya."
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            android:layout_marginTop="6dp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- Track List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvQuickTracks"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:scrollbars="vertical"
+        android:visibility="gone" />
+
+</LinearLayout>

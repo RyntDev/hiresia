@@ -1,0 +1,23 @@
+*.iml
+.gradle
+/local.properties
+/.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+/build
+/captures
+.externalNativeBuild
+.cxx
+/app/build
+.android-sdk/
+compile_commands.json
+.cache/
+
+# Release artifacts and signing secrets
+release_apks/
+*.apk
+*.aab
+*.jks
+*.keystore
+keystore.properties

@@ -56,12 +56,6 @@ cd hiresia
 
 *(On Windows PowerShell: `.\gradlew.bat assembleDebug`)*
 
-For a R8-shrunk release APK, copy [keystore.properties.example](keystore.properties.example) to `keystore.properties` (gitignored), add your release keystore details, and run:
-
-```bash
-./gradlew assembleRelease
-```
-
 ---
 
 ## Documentation
